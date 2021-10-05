@@ -1,5 +1,80 @@
 .header {
+   
     background-color: $color-grey-dark-1;
-
     grid-column: full-screen-start / col-end 6;
+
+    
+
+    background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 8rem;
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(9rem, min-content) 1fr;
+    // grid-template-columns: max-content;
+    grid-row-gap: 1.5rem;
+
+
+    justify-content: center;
+    align-items: start;
+
+    @media only screen and (max-width: $bp-medium) { //max-width pq comecei com desktop
+        grid-column: 1 / -1;
+    } 
+
+    @media only screen and (max-width: $bp-small) { //max-width pq comecei com desktop
+        padding: 5rem;
+    } 
+
+
+    &__logo {
+        height: 4rem;
+        align-self: start;
+        justify-self: center;
+    }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+
+    }
+
+    &__seenon-text {
+        font-size: 1.6rem;
+        color: $color-grey-light-2;
+
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;        
+        justify-content: center;
+        align-items: center;
+        
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+            // filter: brightness(70%);
+        }
+        &::before {transform: translateX(-4rem);}
+        &::after {transform: translateX(4rem);}
+    }
+
+    &__seenon-logos {
+        display: grid;
+        
+        grid-template-columns: repeat(4, 1fr);
+        padding-top: 1.5rem;
+        grid-column-gap: 3rem;
+        justify-items: center;
+        align-items: center;
+
+        img {
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+        }
+    }
 }
